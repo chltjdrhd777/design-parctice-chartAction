@@ -1,16 +1,23 @@
 import React from "react";
-import Hero from "./sections/Hero";
-import Booking from "./sections/Booking";
-import Hotel from "./sections/Hotels";
+import { Gallary } from "components/styled/Home.styled";
+import GalleryItem from "components/GalleryItem";
 
-function HomeMain() {
+const dataset = [
+  { name: "Jane Doe", position: "Creattive Director" },
+  { name: "Jane Doe", position: "Creattive Director" },
+  { name: "Jane Doe", position: "Creattive Director" },
+  { name: "Jane Doe", position: "Creattive Director" },
+  { name: "Jane Doe", position: "Creattive Director" },
+];
+
+function Index() {
   return (
-    <main>
-      <Hero />
-      <Booking />
-      <Hotel />
-    </main>
+    <Gallary>
+      {dataset.map((e) => (
+        <GalleryItem {...e} />
+      ))}
+    </Gallary>
   );
 }
 
-export default HomeMain;
+export default Index;
